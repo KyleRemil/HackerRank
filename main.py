@@ -1,16 +1,19 @@
-# This is a sample Python script.
+input_file = open(r"input.txt")
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def raw_input():
+    return input_file.readline()
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    students = []
+    second_lowests = []
+    lowest = None
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    for _ in range(int(raw_input())):
+
+        name = raw_input()
+        score = float(raw_input())
+        students.append([name, score])
+        if students > 1:
+            lowest = None
+            second_lowest = None
+            for student in students:
